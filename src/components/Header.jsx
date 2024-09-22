@@ -8,6 +8,7 @@ import {
   faXmark,
   faAngleDown,
   faAngleUp,
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
@@ -37,6 +38,17 @@ function Header() {
     },
     {
       name: "手錶",
+    },
+  ];
+  const icons = [
+    {
+      name: faMagnifyingGlass,
+    },
+    {
+      name: faUser,
+    },
+    {
+      name: faBagShopping,
     },
   ];
 
@@ -128,12 +140,63 @@ function Header() {
 
       {/* 電腦版 */}
       <div className="hidden md:block">
-        <ul>
-          <li>Home</li>
-          <li>Collection</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
+        <div className="flex items-center justify-between px-5 py-3 shadow-sm shadow-mainYellow">
+          {/* logo */}
+          <div className="flex items-center justify-center">
+            <img src={logo} alt="logo" className="w-[40px]" />
+            <h1 className="ml-1 text-2xl font-bold">
+              <span className="text-mainOrange">T</span>SHOP
+            </h1>
+          </div>
+          {/* list */}
+          <ul className="flex items-center justify-center gap-5">
+            {list.map((item, index) => (
+              <li
+                key={index}
+                className="relative cursor-pointer hover:underline decoration-2 decoration-mainOrange underline-offset-8"
+                onClick={() => toggleSubList(item.name)}
+              >
+                {item.name}
+                <FontAwesomeIcon
+                  icon={isSubListOpen ? faAngleUp : faAngleDown}
+                  className={`${
+                    item.name === "所有商品" ? "inline-block ml-2" : "hidden"
+                  }`}
+                />
+                {/* subList */}
+                <ul
+                  className={`${
+                    isSubListOpen && item.name === "所有商品"
+                      ? "block absolute left-0 w-full"
+                      : "hidden"
+                  }`}
+                >
+                  {subList.map((subItem, subIndex) => (
+                    <li
+                      key={subIndex}
+                      className="bg-white border-b border-gray-300 shadow-sm hover:text-mainOrange"
+                    >
+                      <p className="px-6 py-3">{subItem.name}</p>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+          {/* icons */}
+          <ul className="flex items-center justify-center">
+            <li>
+              {icons.map((item, index) => (
+                <FontAwesomeIcon
+                  key={index}
+                  icon={item.name}
+                  size="lg"
+                  className="p-2 ml-3 rounded-full cursor-pointer hover:bg-gray-200"
+                />
+              ))}
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );
