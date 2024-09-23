@@ -1,9 +1,11 @@
-import Header from "../components/Header";
+import Header from "@/components/Header";
+import Banner from "@/components/Banner";
 
 function Home() {
   return (
     <>
-      <Header></Header>
+      <Header />
+      <Banner />
     </>
   );
 }

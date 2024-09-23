@@ -71,7 +71,7 @@ function Header() {
     <>
       {/* 手機版 */}
       <div className="md:hidden">
-        <div className="container relative p-3 mx-auto shadow-sm shadow-mainYellow">
+        <div className="relative z-10 p-3">
           <div className="flex items-center justify-between">
             {/* logo */}
             <div className="flex items-center justify-center">
@@ -140,7 +140,7 @@ function Header() {
 
       {/* 電腦版 */}
       <div className="hidden md:block">
-        <div className="flex items-center justify-between px-5 py-3 shadow-sm shadow-mainYellow">
+        <div className="flex items-center justify-between px-5 py-3">
           {/* logo */}
           <div className="flex items-center justify-center">
             <img src={logo} alt="logo" className="w-[40px]" />
