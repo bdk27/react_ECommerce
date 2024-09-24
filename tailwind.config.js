@@ -4,9 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        mainYellow: "#f0b825",
-        mainOrange: "#ff7232",
-        mainPurple: "#9698ff",
+        mainGold: "#FFD700",
+        mainPink: "#FF66CC",
+        mainGreen: "#50C878",
+        lightGold: "#FFFACD",
+        lightPink: "#FFB6C1",
+        lightGreen: "#98FB98",
       },
     },
   },
