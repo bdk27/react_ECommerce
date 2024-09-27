@@ -1,11 +1,13 @@
 import Header from "@/components/Header";
-import Banner from "@/components/Banner";
+import SwiperBanner from "@/components/SwiperBanner";
+import List from "@/components/List";
 
 function Home() {
   return (
     <>
       <Header />
-      <Banner />
+      <SwiperBanner />
+      <List />
     </>
   );
 }

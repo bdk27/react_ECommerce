@@ -9,17 +9,16 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "@/assets/css/swiperStyle.css";
 
-function Banner() {
+function SwiperBanner() {
   return (
     <>
       <Swiper
         modules={[Navigation, Pagination, A11y, Autoplay]}
+        className="z-10"
         spaceBetween={50}
         slidesPerView={1} //每頁顯示幾張
         navigation
-        Autoplay
         pagination={{ clickable: true }}
-        a11y={true}
         loop={true}
         autoplay={{
           delay: 3000, // 自動播放延遲 3 秒
@@ -37,4 +36,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default SwiperBanner;
