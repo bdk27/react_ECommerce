@@ -1,13 +1,15 @@
 import Header from "@/components/Header";
 import SwiperBanner from "@/components/SwiperBanner";
-import List from "@/components/List";
+import Service from "@/components/Service";
 
 function Home() {
   return (
     <>
       <Header />
       <SwiperBanner />
-      <List />
+      <div className="container mx-auto">
+        <Service />
+      </div>
     </>
   );
 }
