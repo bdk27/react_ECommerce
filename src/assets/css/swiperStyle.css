@@ -9,6 +9,6 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ffb6c1; /* 當前滑塊的分頁點顏色 */
+  background-color: #594838; /* 當前滑塊的分頁點顏色 */
   opacity: 1; /* 確保激活的點完全不透明 */
 }

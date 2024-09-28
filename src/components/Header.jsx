@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -14,16 +14,16 @@ import {
 function Header() {
   const list = [
     {
-      name: "首頁",
+      name: "流行時尚",
     },
     {
-      name: "所有商品",
+      name: "鞋款",
     },
     {
-      name: "關於",
+      name: "香水",
     },
     {
-      name: "聯絡我們",
+      name: "女包",
     },
   ];
   const subList = [
@@ -56,7 +56,7 @@ function Header() {
   const [isSubListOpen, setIsSubListOpen] = useState(false);
 
   function toggleSubList(name) {
-    if (name === "所有商品") {
+    if (name === "流行時尚") {
       setIsSubListOpen((prev) => !prev);
     } else {
       setisListOpen((prev) => !prev);
@@ -71,14 +71,11 @@ function Header() {
     <>
       {/* 手機版 */}
       <div className="md:hidden">
-        <div className="relative z-10 p-3">
+        <div className="relative z-50 p-3 shadow-sm">
           <div className="flex items-center justify-between">
             {/* logo */}
             <div className="flex items-center justify-center">
-              <img src={logo} alt="logo" className="w-[30px]" />
-              <h1 className="ml-1 text-xl font-bold">
-                <span className="text-mainOrange">T</span>SHOP
-              </h1>
+              <img src={logo} alt="logo" className="w-[70px]" />
             </div>
             {/* icons */}
             <ul className="flex items-center justify-center gap-5">
@@ -100,74 +97,71 @@ function Header() {
         </div>
 
         {/* list */}
-        <ul
-          className={`absoilate w-full left-0 top-0 overflow-hidden transition-all duration-500 ease-in-out ${
-            isListOpen ? "max-h-[500px]" : "max-h-0"
+        <div
+          className={`z-10 fixed inset-0 bg-white w-full left-0 top-0 overflow-hidden transition-all duration-500 ease-in-out ${
+            isListOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          {list.map((item, index) => (
-            <li key={index}>
-              <div
-                className="flex items-center justify-between p-3 border-b hover:text-mainOrange"
-                onClick={() => toggleSubList(item.name)}
-              >
-                <p>{item.name}</p>
-                <FontAwesomeIcon
-                  icon={isSubListOpen ? faAngleUp : faAngleDown}
-                  className={`${item.name === "所有商品" ? "block" : "hidden"}`}
-                />
-              </div>
+          <ul className="pt-16">
+            {list.map((item, index) => (
+              <li key={index}>
+                <div
+                  className="flex items-center justify-between p-3 border-b hover:text-mainOrange"
+                  onClick={() => toggleSubList(item.name)}
+                >
+                  <p>{item.name}</p>
+                  <FontAwesomeIcon
+                    icon={isSubListOpen ? faAngleUp : faAngleDown}
+                    className={`${
+                      item.name === "流行時尚" ? "block" : "hidden"
+                    }`}
+                  />
+                </div>
 
-              <ul
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  item.name === "所有商品" ? "block" : "hidden"
-                } ${isSubListOpen ? "max-h-[300px]" : "max-h-0"}`}
-              >
-                {subList.map((subItem, subIndex) => (
-                  <li
-                    key={subIndex}
-                    className="bg-gray-100 border-b border-gray-300"
-                    onClick={closeList}
-                  >
-                    <p className="px-6 py-3">{subItem.name}</p>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+                <ul
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    item.name === "流行時尚" ? "block" : "hidden"
+                  } ${isSubListOpen ? "max-h-[300px]" : "max-h-0"}`}
+                >
+                  {subList.map((subItem, subIndex) => (
+                    <li
+                      key={subIndex}
+                      className="bg-gray-100 border-b border-gray-300"
+                      onClick={closeList}
+                    >
+                      <p className="px-6 py-3">{subItem.name}</p>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       {/* 電腦版 */}
       <div className="hidden md:block">
         <div className="flex items-center justify-between px-5 py-3">
-          {/* logo */}
-          <div className="flex items-center justify-center">
-            <img src={logo} alt="logo" className="w-[40px]" />
-            <h1 className="ml-1 text-2xl font-bold">
-              <span className="text-mainOrange">T</span>SHOP
-            </h1>
-          </div>
           {/* list */}
-          <ul className="flex items-center justify-center gap-5">
+          <ul className="flex items-center justify-center w-1/3 gap-5">
             {list.map((item, index) => (
               <li
                 key={index}
-                className="relative cursor-pointer hover:underline decoration-2 decoration-mainOrange underline-offset-8"
+                className="relative cursor-pointer hover:underline decoration-2 decoration-mainSkin underline-offset-8"
                 onClick={() => toggleSubList(item.name)}
               >
                 {item.name}
                 <FontAwesomeIcon
                   icon={isSubListOpen ? faAngleUp : faAngleDown}
                   className={`${
-                    item.name === "所有商品" ? "inline-block ml-2" : "hidden"
+                    item.name === "流行時尚" ? "inline-block ml-2" : "hidden"
                   }`}
                 />
                 {/* subList */}
                 <ul
                   className={`${
-                    isSubListOpen && item.name === "所有商品"
-                      ? "block absolute left-0 w-full"
+                    isSubListOpen && item.name === "流行時尚"
+                      ? "block absolute left-0 w-full z-50"
                       : "hidden"
                   }`}
                 >
@@ -183,8 +177,15 @@ function Header() {
               </li>
             ))}
           </ul>
+          {/* logo */}
+          <div className="relative z-10 flex items-center justify-center w-1/3 ">
+            <div className="absolute -bottom-100 w-[150px] h-[150px] bg-white rounded-full"></div>
+            <div className="absolute -top-5">
+              <img src={logo} alt="logo" className="w-[100px] cursor-pointer" />
+            </div>
+          </div>
           {/* icons */}
-          <ul className="flex items-center justify-center">
+          <ul className="flex items-center justify-center w-1/3 ">
             <li>
               {icons.map((item, index) => (
                 <FontAwesomeIcon

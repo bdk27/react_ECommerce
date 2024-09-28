@@ -7,9 +7,7 @@ function Home() {
     <>
       <Header />
       <SwiperBanner />
-      <div className="container mx-auto">
-        <Service />
-      </div>
+      <Service />
     </>
   );
 }

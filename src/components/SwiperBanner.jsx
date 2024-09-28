@@ -11,10 +11,9 @@ import "@/assets/css/swiperStyle.css";
 
 function SwiperBanner() {
   return (
-    <>
+    <div className="-z-50">
       <Swiper
         modules={[Navigation, Pagination, A11y, Autoplay]}
-        className="z-10"
         spaceBetween={50}
         slidesPerView={1} //每頁顯示幾張
         navigation
@@ -32,7 +31,7 @@ function SwiperBanner() {
           <img src={banner2} alt="banner2" />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }
 
