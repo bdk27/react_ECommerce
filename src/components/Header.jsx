@@ -1,5 +1,6 @@
 import { useState } from "react";
 import logo from "@/assets/img/logo.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -179,10 +180,7 @@ function Header() {
           </ul>
           {/* logo */}
           <div className="relative z-10 flex items-center justify-center w-1/3 ">
-            <div className="absolute -bottom-100 w-[150px] h-[150px] bg-white rounded-full"></div>
-            <div className="absolute -top-5">
-              <img src={logo} alt="logo" className="w-[100px] cursor-pointer" />
-            </div>
+            <img src={logo} alt="logo" className="w-[100px] cursor-pointer" />
           </div>
           {/* icons */}
           <ul className="flex items-center justify-center w-1/3 ">
