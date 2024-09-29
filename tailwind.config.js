@@ -4,17 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        mainGold: "#FFD700",
-        mainBrown: "#594838",
-        mainSkin: "#F4C2C2",
+        mainBrown: "#5c3411",
         mainBeige: "#F5DEB3",
-
-        lightGold: "#FFFACD",
+        softOrangeBrown: "#e1af7a",
+        softGold: "#f3d08c",
+        MutedGreen: "#afb6a4",
+        lightKhaki: "#d5c6a9",
         lightPink: "#FFB6C1",
-        lightGreen: "#98FB98",
-        lightBrown: "#f0e3d1",
-        lightGold2: "#D4AF37",
-        lightBlue: "#A3C1AD",
+        lightBeige: "#f0e3d1",
       },
     },
   },
