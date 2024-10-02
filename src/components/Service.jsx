@@ -4,6 +4,7 @@ import {
   faGift,
   faMoneyBill,
   faHeadset,
+  faCakeCandles,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Service() {
@@ -36,6 +37,20 @@ function Service() {
 
   return (
     <>
+      <div
+        className="flex items-center justify-center"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(255, 228, 196, 0) 0%, rgba(255, 228, 196, 1) 50%, rgba(255, 228, 196, 0) 100%)",
+        }}
+      >
+        <FontAwesomeIcon icon={faCakeCandles} />
+        <p className="px-2 py-3 font-bold">
+          Venus 歡慶<span className="px-1 text-red-500">10</span>
+          周年! 登入就抽好禮
+        </p>
+      </div>
+
       <div className="py-5 shadow-sm">
         <div className="container mx-auto">
           <ul className="flex flex-col items-start justify-between gap-3 md:flex-row">
