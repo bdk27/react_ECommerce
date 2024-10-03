@@ -13,6 +13,9 @@ export default {
         lightPink: "#FFB6C1",
         lightBeige: "#f0e3d1",
       },
+      fontFamily: {
+        "dancing-script": ["Dancing Script", "cursive"],
+      },
     },
   },
   plugins: [],
