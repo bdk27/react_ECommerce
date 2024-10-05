@@ -1,10 +1,10 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTruckFast,
   faGift,
   faMoneyBill,
   faHeadset,
-  faCakeCandles,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Service() {
@@ -38,27 +38,16 @@ function Service() {
   return (
     <>
       <div
-        className="flex items-center justify-center"
+        className="py-10"
         style={{
           background:
-            "linear-gradient(to right, rgba(255, 228, 196, 0) 0%, rgba(255, 228, 196, 1) 50%, rgba(255, 228, 196, 0) 100%)",
+            "linear-gradient(to bottom, rgba(247, 236, 224, 1) 0%, rgba(247, 236, 224, .5) 50%, rgba(247, 236, 224, 0) 100%)",
         }}
       >
-        <FontAwesomeIcon icon={faCakeCandles} />
-        <p className="px-2 py-3 font-bold">
-          Venus 歡慶<span className="px-1 text-red-500">10</span>
-          周年! 登入就抽好禮
-        </p>
-      </div>
-
-      <div className="py-5 shadow-sm">
-        <div className="container mx-auto">
-          <ul className="flex flex-col items-start justify-between gap-3 md:flex-row">
-            {list.map((item, index) => (
-              <li
-                key={index}
-                className="flex items-center md:w-1/4 md:text-center md:block"
-              >
+        <ul className="flex flex-col items-start justify-between gap-3 md:flex-row">
+          {list.map((item, index) => (
+            <React.Fragment key={index}>
+              <li className="flex items-center md:w-1/4 md:text-center md:block">
                 <FontAwesomeIcon
                   icon={item.icon}
                   size="lg"
@@ -70,9 +59,14 @@ function Service() {
                   <p className="text-sm md:text-base">{item.content}</p>
                 </div>
               </li>
-            ))}
-          </ul>
-        </div>
+              {index < list.length - 1 && (
+                <span className="hidden text-xl font-light text-gray-400 md:inline-block">
+                  |
+                </span>
+              )}
+            </React.Fragment>
+          ))}
+        </ul>
       </div>
     </>
   );
