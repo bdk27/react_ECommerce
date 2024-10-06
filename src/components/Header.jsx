@@ -60,7 +60,7 @@ function Header() {
   return (
     <>
       {/* 手機版 */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <div className="relative z-50">
           <div className="flex items-center justify-between p-3 bg-white shadow">
             {/* logo */}
@@ -91,45 +91,57 @@ function Header() {
             isListOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          <ul className="pt-16">
-            {list.map((item, index) => (
-              <li key={index}>
-                <div
-                  className="flex items-center justify-between p-3 border-b hover:text-mainOrange"
-                  onClick={() => toggleSubList(item.name)}
-                >
-                  <p>{item.name}</p>
-                  <FontAwesomeIcon
-                    icon={isSubListOpen ? faAngleUp : faAngleDown}
-                    className={`${
-                      item.name === "精選服飾" ? "block" : "hidden"
-                    }`}
-                  />
-                </div>
+          <div className="pt-16">
+            <div className="relative">
+              <input
+                type="text"
+                className="w-full p-2 pr-12 border outline-none"
+                placeholder="搜尋"
+              />
+              <button className="absolute px-2 py-1 transform -translate-y-1/2 rounded right-2 top-1/2 text-mainBrown bg-mainBeige hover:bg-softGold">
+                <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" />
+              </button>
+            </div>
+            <ul>
+              {list.map((item, index) => (
+                <li key={index}>
+                  <div
+                    className="flex items-center justify-between p-3 border-b hover:text-mainOrange"
+                    onClick={() => toggleSubList(item.name)}
+                  >
+                    <p>{item.name}</p>
+                    <FontAwesomeIcon
+                      icon={isSubListOpen ? faAngleUp : faAngleDown}
+                      className={`${
+                        item.name === "精選服飾" ? "block" : "hidden"
+                      }`}
+                    />
+                  </div>
 
-                <ul
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    item.name === "精選服飾" ? "block" : "hidden"
-                  } ${isSubListOpen ? "max-h-[300px]" : "max-h-0"}`}
-                >
-                  {subList.map((subItem, subIndex) => (
-                    <li
-                      key={subIndex}
-                      className="bg-gray-100 border-b border-gray-300"
-                      onClick={closeList}
-                    >
-                      <p className="px-6 py-3">{subItem.name}</p>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
+                  <ul
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      item.name === "精選服飾" ? "block" : "hidden"
+                    } ${isSubListOpen ? "max-h-[300px]" : "max-h-0"}`}
+                  >
+                    {subList.map((subItem, subIndex) => (
+                      <li
+                        key={subIndex}
+                        className="bg-gray-100 border-b border-gray-300"
+                        onClick={closeList}
+                      >
+                        <p className="px-6 py-3">{subItem.name}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
       {/* 電腦版 */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div className="flex items-center justify-between px-5 py-2 shadow">
           {/* list */}
           <ul className="flex items-center justify-center w-1/3 gap-5">
@@ -143,7 +155,7 @@ function Header() {
                 <FontAwesomeIcon
                   icon={isSubListOpen ? faAngleUp : faAngleDown}
                   className={`${
-                    item.name === "精選服飾" ? "inline-block ml-2" : "hidden"
+                    item.name === "精選服飾" ? "inline-block ml-1" : "hidden"
                   }`}
                 />
                 {/* subList */}
@@ -178,7 +190,7 @@ function Header() {
                 className="w-[250px] p-2 pr-12 border rounded outline-none focus:border-mainBrown"
                 placeholder="搜尋"
               />
-              <button className="absolute px-2 py-1 transform -translate-y-1/2 rounded right-2 top-1/2 bg-mainBeige hover:bg-softGold">
+              <button className="absolute px-2 py-1 transform -translate-y-1/2 rounded right-2 top-1/2 text-mainBrown bg-mainBeige hover:bg-softGold">
                 <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" />
               </button>
             </div>
