@@ -1,4 +1,3 @@
-// import venus_logo from "@/assets/img/venus_logo.png";
 import wind from "@/assets/img/wind.png";
 import spring from "@/assets/img/spring.png";
 
@@ -11,11 +10,11 @@ function Introduction() {
         </div>
 
         <div className="flex flex-col items-center justify-center text-center md:w-1/3">
-          <h1 className="mb-5 text-2xl font-bold text-lightKhaki md:text-4xl font-dancing-script">
+          <h1 className="mb-5 text-xl font-bold text-lightKhaki md:text-3xl lg:text-4xl font-dancing-script">
             "Unleash the beauty and strength within you."
           </h1>
-          <p className="text-sm md:text-base">
-            無論是服飾、鞋子、包包還是香水，Venus都提供精心挑選的時尚精品，讓你在每個場合都能自信閃耀。我們相信，美麗不僅來自外表，更來自內心的自我欣賞與愛護
+          <p className="text-sm lg:text-base">
+            無論是何種商品，Venus都提供精心挑選的時尚精品，讓你在每個場合都能自信閃耀。我們相信，美麗不僅來自外表，更來自內心的自我欣賞與愛護
           </p>
         </div>
 

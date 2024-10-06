@@ -8,7 +8,7 @@ export default {
         mainBeige: "#F5DEB3",
         softOrangeBrown: "#e1af7a",
         softGold: "#f3d08c",
-        MutedGreen: "#afb6a4",
+        mutedGreen: "#afb6a4",
         lightKhaki: "#d5c6a9",
         lightPink: "#FFB6C1",
         lightBeige: "#f0e3d1",

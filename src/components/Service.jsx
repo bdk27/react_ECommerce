@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTruckFast,
@@ -38,33 +37,33 @@ function Service() {
   return (
     <>
       <div
-        className="py-10"
+        className="py-5 md:py-10"
         style={{
           background:
             "linear-gradient(to bottom, rgba(247, 236, 224, 1) 0%, rgba(247, 236, 224, .5) 50%, rgba(247, 236, 224, 0) 100%)",
         }}
       >
-        <ul className="flex flex-col items-start justify-between gap-3 md:flex-row">
+        <ul className="container flex flex-col items-start justify-center mx-auto md:flex-row md:flex-wrap">
           {list.map((item, index) => (
-            <React.Fragment key={index}>
-              <li className="flex items-center md:w-1/4 md:text-center md:block">
-                <FontAwesomeIcon
-                  icon={item.icon}
-                  size="lg"
-                  className="p-3 mx-3 text-white rounded-full shadow-md"
-                  style={{ backgroundColor: item.color }}
-                />
-                <div>
-                  <h3 className="py-1 font-bold">{item.title}</h3>
-                  <p className="text-sm md:text-base">{item.content}</p>
-                </div>
-              </li>
-              {index < list.length - 1 && (
-                <span className="hidden text-xl font-light text-gray-400 md:inline-block">
-                  |
-                </span>
-              )}
-            </React.Fragment>
+            <li
+              key={index}
+              className="flex items-center gap-2 w-full mt-3 md:text-center md:w-1/2 lg:w-[250px] lg:block relative
+                     after:hidden lg:after:block lg:after:content-['|'] lg:after:absolute lg:after:right-0 lg:after:top-0  lg:after:text-gray-400 
+                     last:after:hidden"
+            >
+              <FontAwesomeIcon
+                icon={item.icon}
+                size="lg"
+                className="p-3 ml-3 text-sm text-white rounded-full shadow-md md:text-base md:m-0"
+                style={{ backgroundColor: item.color }}
+              />
+              <div>
+                <h3 className="py-1 text-sm font-bold text-left lg:text-center md:text-base">
+                  {item.title}
+                </h3>
+                <p className="text-sm md:text-base">{item.content}</p>
+              </div>
+            </li>
           ))}
         </ul>
       </div>
